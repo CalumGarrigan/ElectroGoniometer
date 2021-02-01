@@ -8,6 +8,6 @@ public class NewPatientActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // TODO setContentView(R.layout.activity_main);
+        //// TODO setContentView(R.layout.activity_main);
     }
 }
