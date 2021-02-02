@@ -4,10 +4,10 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class PatientDetailsActivity extends AppCompatActivity {
+public class AboutPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //// TODO setContentView(R.layout.activity_main);
+         setContentView(R.layout.page_about);
     }
 }

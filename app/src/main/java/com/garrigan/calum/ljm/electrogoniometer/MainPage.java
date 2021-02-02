@@ -1,17 +1,18 @@
 package com.garrigan.calum.ljm.electrogoniometer;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainPage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.page_main);
         setupButtonClicks();
     }
 
@@ -21,19 +22,16 @@ public class MainActivity extends AppCompatActivity {
             btnNewPatient.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(getApplicationContext(), "New Patient pressed", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(getApplicationContext(), NewPatientPage.class));
                 }
             });
         }
 
         TextView btnPatientData = findViewById(R.id.button_patient_data);
         if(btnPatientData != null) {
-            btnPatientData.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(getApplicationContext(), "Patient Data pressed", Toast.LENGTH_LONG).show();
-                }
-            });
+            btnPatientData.setOnClickListener(v ->
+                    startActivity(new Intent(getApplicationContext(), PatientListPage.class))
+            );
         }
 
         TextView btnAbout = findViewById(R.id.button_about_app);
@@ -41,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             btnAbout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(getApplicationContext(), "About pressed", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(getApplicationContext(), AboutPage.class));
                 }
             });
         }
