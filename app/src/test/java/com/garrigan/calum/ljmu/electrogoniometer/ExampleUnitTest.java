@@ -1,4 +1,4 @@
-package com.garrigan.calum.ljm.electrogoniometer;
+package com.garrigan.calum.ljmu.electrogoniometer;
 
 import org.junit.Test;
 

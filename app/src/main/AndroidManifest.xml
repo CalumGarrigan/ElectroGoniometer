@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.garrigan.calum.ljm.electrogoniometer" >
+    package="com.garrigan.calum.ljmu.electrogoniometer" >
 
     <application
         android:allowBackup="true"
@@ -9,25 +9,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ElectroGoniometer" >
-        <activity android:name=".MainPage" >
+        <activity android:name="com.garrigan.calum.ljmu.electrogoniometer.MainPage" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".NewPatientPage" >
+        <activity android:name="com.garrigan.calum.ljmu.electrogoniometer.NewPatientPage" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PatientListPage" >
+        <activity android:name="com.garrigan.calum.ljmu.electrogoniometer.PatientListPage" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AboutPage" >
+        <activity android:name="com.garrigan.calum.ljmu.electrogoniometer.AboutPage" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

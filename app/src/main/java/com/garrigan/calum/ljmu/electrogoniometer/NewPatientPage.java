@@ -1,13 +1,13 @@
-package com.garrigan.calum.ljm.electrogoniometer;
+package com.garrigan.calum.ljmu.electrogoniometer;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class PatientDetailsPage extends AppCompatActivity {
+public class NewPatientPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //// TODO setContentView(R.layout.activity_main);
+        setContentView(R.layout.page_new_patient);
     }
 }
