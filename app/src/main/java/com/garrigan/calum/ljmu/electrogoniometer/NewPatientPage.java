@@ -9,5 +9,6 @@ public class NewPatientPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.page_new_patient);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }
