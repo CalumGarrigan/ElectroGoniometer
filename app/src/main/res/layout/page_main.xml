@@ -6,6 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainPage">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/goniometer_image"
+        android:backgroundTint="@color/cardview_light_background"/>
     <TextView
         android:id="@+id/button_new_patient"
         android:layout_width="wrap_content"
@@ -19,13 +26,14 @@
         android:padding="10dp"
         android:textSize="24dp"
         android:textColor="@color/white"
-        android:background="@color/black"/>
+        android:background="@drawable/rounded_button"
+        />
 
     <TextView
         android:id="@+id/button_patient_data"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/black"
+        android:background="@drawable/rounded_button"
         android:gravity="center"
         android:padding="10dp"
         android:text="Patient List"
@@ -34,7 +42,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <TextView
         android:id="@+id/button_about_app"
@@ -49,6 +58,7 @@
         android:padding="10dp"
         android:textSize="24dp"
         android:textColor="@color/white"
-        android:background="@color/black"/>
+        android:background="@drawable/rounded_button"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
