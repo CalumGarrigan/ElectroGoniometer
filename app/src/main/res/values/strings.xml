@@ -1,6 +1,18 @@
 <resources>
-    <string name="app_name">ElectroGoniometer</string>
+    <string name="app_name">Electrogoniometer</string>
     <string name="New_Patient"> New Patient</string>
     <string name="Patient_List"> Patient List</string>
     <string name="About_App"> About App</string>
+    <string name="Goniometer">Goniometer</string>
+    <string name="linktosite">
+        <a href="https://icons8.com/"> "https://icons8.com/"</a> </string>
+    <string name="linktosite2">
+        <a href="https://lucid.app/users/login#/login?clearStorage=true"> "Lucidchart:Online Diagram Software and Visual Solution"</a> </string>
+    <string name="linktosite3">
+        <a href="https://www.semanticscholar.org/paper/Examination-of-the-child-with-cerebral-palsy.-Novacheck-Trost/703fa8ac0516e21cd1ae1e696dc9562fe85d3b2c"> "Image developed by Novacheck et al. 2010"</a>
+    </string>
+
 </resources>
+
+
+

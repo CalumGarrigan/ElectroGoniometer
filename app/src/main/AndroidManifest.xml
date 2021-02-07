@@ -22,8 +22,8 @@
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
         </activity>
-        
-
+        <activity android:name=".GoniometerPage" android:parentActivityName=".NewPatientPage"
+            android:label="@string/Goniometer"/>
     </application>
 
 </manifest>
