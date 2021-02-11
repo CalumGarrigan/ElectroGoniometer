@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:text="Right"
             android:textSize="24dp"/>
-    </RadioGroup>
+        </RadioGroup>
 
     <TextView
         android:id="@+id/measure_button"

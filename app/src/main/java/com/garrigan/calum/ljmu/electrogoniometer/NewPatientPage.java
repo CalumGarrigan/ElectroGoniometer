@@ -19,12 +19,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import static android.R.layout.*;
 
 public class NewPatientPage extends AppCompatActivity {
+
+    static Integer patientId = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.page_new_patient);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        patientId++;
         setupClicks();
     }
 
@@ -40,6 +43,7 @@ public class NewPatientPage extends AppCompatActivity {
                     RadioButton radioButton = radioGroup.findViewById(radioGroup.getCheckedRadioButtonId());
 
                     my.putExtra("extra_joint", radioButton.getText());
+                    my.putExtra("extra_patient_id", patientId);
                     startActivity(my);
                 }
             });

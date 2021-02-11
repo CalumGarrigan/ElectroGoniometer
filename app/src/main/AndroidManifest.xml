@@ -23,7 +23,8 @@
         </intent-filter>
         </activity>
         <activity android:name=".GoniometerPage" android:parentActivityName=".NewPatientPage"
-            android:label="@string/Goniometer"/>
+            android:label="@string/Goniometer"
+            android:screenOrientation="landscape"/>
     </application>
 
 </manifest>
