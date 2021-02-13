@@ -9,22 +9,31 @@
         android:roundIcon="@mipmap/foot_image_vector_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ElectroGoniometer" >
-        <activity android:name=".MainPage" />
-        <activity android:name=".NewPatientPage" android:parentActivityName=".MainPage"
-            android:label="@string/New_Patient"/>
-        <activity android:name=".PatientListPage" android:parentActivityName=".MainPage"
-            android:label="@string/Patient_List"/>
-        <activity android:name=".AboutPage" android:parentActivityName=".MainPage"
-            android:label="@string/About_App"/>
-        <activity android:name=".SplashActivity" android:theme="@style/Theme.ElectroGoniometer1" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+        <activity android:name=".MainPage"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".NewReadingPage"
+            android:parentActivityName=".MainPage"
+            android:label="@string/New_Patient"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ReadingsPage"
+            android:parentActivityName=".MainPage"
+            android:label="@string/Patient_List"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".AboutPage"
+            android:parentActivityName=".MainPage"
+            android:label="@string/About_App"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".SplashActivity"
+            android:theme="@style/Theme.ElectroGoniometer1"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-        <activity android:name=".GoniometerPage" android:parentActivityName=".NewPatientPage"
+        <activity android:name=".GoniometerPage"
+            android:parentActivityName=".NewReadingPage"
             android:label="@string/Goniometer"
             android:screenOrientation="landscape"/>
     </application>
-
 </manifest>

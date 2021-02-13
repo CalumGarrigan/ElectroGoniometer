@@ -1,28 +1,21 @@
 package com.garrigan.calum.ljmu.electrogoniometer;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.util.Pair;
+import android.os.Handler;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.os.Handler;
-import android.app.Activity;
-
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.HashMap;
-
+import java.util.HashSet;
+import java.util.Set;
 
 public class GoniometerPage extends AppCompatActivity implements SensorEventListener {
-
-    public static HashMap<String, Pair<Integer, Integer>> patientRecords = new HashMap<String, Pair<Integer, Integer>>();
 
     private TextView textView;
     private SensorManager sensorManager;
@@ -30,13 +23,13 @@ public class GoniometerPage extends AppCompatActivity implements SensorEventList
     private SensorEvent currentPos;
     private Double startAngle;
     private Double endAngle;
+    private String measuredAngle;
     private Boolean isMeasuring = false;
     private ImageView playIcon;
-    private Button btn;
     private TextView angle;
-    private String string;
     private String joint;
-    private Integer patientId;
+    private String patientId;
+    private String trialId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,35 +37,31 @@ public class GoniometerPage extends AppCompatActivity implements SensorEventList
         setContentView(R.layout.page_goniometer);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
-        TextView btn = findViewById(R.id.save_data_button);
         angle = findViewById(R.id.angle);
 
-        btn.setOnClickListener(new View.OnClickListener() {
+        TextView btnSave = findViewById(R.id.save_data_button);
+        btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                getSharedPreferences("patient_data", MODE_PRIVATE).edit().putInt("extra_end_angle", endAngle.intValue());
+                String measurement = patientId + " " + trialId + ": " + joint + " Joint : Angle: " + measuredAngle;
+                MainPage.data.add(measurement);
+                Set<String> set = new HashSet<String>();
+                set.addAll(MainPage.data);
+                getSharedPreferences("app", MODE_PRIVATE).edit().putStringSet("measurements", set).commit();
 
-                if(patientRecords.containsKey(patientId)) {
-                    Pair<Integer, Integer> patientRecord = patientRecords.get(patientId);
-
-                    if (joint.compareToIgnoreCase("left") == 0) {
-                       // todo  patientRecord.first = endAngle.intValue();
-                    }
-                }
-                Intent i = new Intent(GoniometerPage.this, PatientListPage.class);
-               startActivity(i);
+                startActivity(new Intent(GoniometerPage.this, ReadingsPage.class));
                 finish();
             }
         });
 
+        patientId = getIntent().getStringExtra("extra_patient_id");
+        trialId = getIntent().getStringExtra("extra_trial_id");
         joint = getIntent().getStringExtra("extra_joint");
-        patientId = getIntent().getIntExtra("extra_patient_id", 0);
 
         TextView title = findViewById(R.id.title);
         if(title != null) {
-            title.setText("Patient #"+ patientId + ": " + joint + " Joint ");
+            title.setText(patientId + " " + trialId + ": " + joint + " Joint ");
         }
 
         playIcon = findViewById(R.id.playIcon);
@@ -95,7 +84,6 @@ public class GoniometerPage extends AppCompatActivity implements SensorEventList
             }
         });
 
-
         setupSensor();
         blink();
     }
@@ -111,7 +99,8 @@ public class GoniometerPage extends AppCompatActivity implements SensorEventList
         endAngle = getAngle(currentPos);
         if(isMeasuring) {
             TextView angleLabel = findViewById(R.id.angle);
-            angleLabel.setText(Math.abs((endAngle.intValue() - startAngle.intValue())) + "°");
+            measuredAngle = Math.abs((endAngle.intValue() - startAngle.intValue())) + "°";
+            angleLabel.setText(measuredAngle);
         }
     }
 

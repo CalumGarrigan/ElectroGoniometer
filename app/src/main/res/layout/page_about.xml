@@ -13,19 +13,16 @@
   <ScrollView
       android:layout_width="match_parent"
       android:layout_height="match_parent">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
       <androidx.cardview.widget.CardView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_gravity="center_horizontal"
           android:layout_marginTop="15dp"
           app:cardCornerRadius="20dp">
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -36,9 +33,7 @@
             android:textColor="@color/white"
             android:textSize="25dp"
             android:textStyle="bold" />
-
       </androidx.cardview.widget.CardView>
-
       <TextView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
@@ -48,14 +43,11 @@
           android:text="This app is designed to measure joint angles of the body."
           android:textColor="@color/white"
           android:textSize="20dp" />
-
-
       <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
           android:layout_width="match_parent"
           android:layout_height="343dp"
           android:layout_marginTop="5dp"
           app:src="@drawable/app_design" />
-
       <TextView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
@@ -64,7 +56,6 @@
           android:text="(pinch to zoom in)"
           android:textColor="@color/white"
           android:textSize="12dp" />
-
       <TextView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
@@ -73,13 +64,11 @@
           android:text="This is the application design layout of each page."
           android:textColor="@color/white"
           android:textSize="20dp" />
-
       <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
           android:layout_width="match_parent"
           android:layout_height="343dp"
           android:layout_marginTop="5dp"
           app:src="@drawable/electrogoniometer" />
-
       <TextView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
@@ -88,7 +77,6 @@
           android:text="(pinch to zoom in)"
           android:textColor="@color/white"
           android:textSize="12dp" />
-
       <TextView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
@@ -98,14 +86,10 @@
 "
           android:textColor="@color/white"
           android:textSize="20dp" />
-
-
       <View
           android:layout_width="wrap_content"
           android:layout_height="4dp"
           android:background="@color/white" />
-
-
       <TextView
           android:layout_width="421dp"
           android:layout_height="32dp"
@@ -115,7 +99,6 @@
           android:padding="2dp"
           android:id="@+id/text1"
           android:text="@string/linktosite" />
-
       <TextView
           android:layout_width="388dp"
           android:layout_height="48dp"
@@ -125,7 +108,6 @@
           android:padding="2dp"
           android:id="@+id/text2"
           android:text="@string/linktosite2" />
-
       <TextView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
@@ -136,10 +118,6 @@
           android:padding="2dp"
           android:id="@+id/text3"
           android:text="@string/linktosite3" />
-
-
     </LinearLayout>
-
   </ScrollView>
-
 </LinearLayout>

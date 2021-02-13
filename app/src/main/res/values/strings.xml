@@ -1,8 +1,23 @@
 <resources>
     <string name="app_name">Electrogoniometer</string>
-    <string name="New_Patient"> New Patient</string>
-    <string name="Patient_List"> Patient List</string>
-    <string name="About_App"> About App</string>
+    <string-array name="patient_numbers">
+        <item>Patient #1</item>
+        <item>Patient #2</item>
+        <item>Patient #3</item>
+        <item>Patient #4</item>
+        <item>Patient #5</item>
+    </string-array>
+    <string-array name="trial_numbers">
+        <item>Trial #1</item>
+        <item>Trial #2</item>
+        <item>Trial #3</item>
+        <item>Trial #4</item>
+        <item>Trial #5</item>
+    </string-array>
+
+    <string name="New_Patient">New Reading</string>
+    <string name="Patient_List">Readings</string>
+    <string name="About_App">About</string>
     <string name="Goniometer">Goniometer</string>
     <string name="linktosite">
         <a href="https://icons8.com/"> "https://icons8.com/"</a> </string>
@@ -11,6 +26,10 @@
     <string name="linktosite3">
         <a href="https://www.semanticscholar.org/paper/Examination-of-the-child-with-cerebral-palsy.-Novacheck-Trost/703fa8ac0516e21cd1ae1e696dc9562fe85d3b2c"> "Image developed by Novacheck et al. 2010"</a>
     </string>
+
+
+    
+
 
 </resources>
 
