@@ -26,13 +26,13 @@ public class NewReadingPage extends AppCompatActivity implements AdapterView.OnI
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         patient_spinner = findViewById(R.id.patient_id);
-        ArrayAdapter<CharSequence> adapterPatient = ArrayAdapter.createFromResource(this,R.array.patient_numbers, simple_spinner_item);
+        ArrayAdapter<CharSequence> adapterPatient = ArrayAdapter.createFromResource(this,R.array.patient_numbers, R.layout.spinner_text);
         adapterPatient.setDropDownViewResource(simple_spinner_dropdown_item);
         patient_spinner.setAdapter(adapterPatient);
         patient_spinner.setOnItemSelectedListener(this);
 
         trial_spinner = findViewById(R.id.trial_id);
-        ArrayAdapter<CharSequence> adapterTrial = ArrayAdapter.createFromResource(this,R.array.trial_numbers, simple_spinner_item);
+        ArrayAdapter<CharSequence> adapterTrial = ArrayAdapter.createFromResource(this,R.array.trial_numbers, R.layout.spinner_text);
         adapterTrial.setDropDownViewResource(simple_spinner_dropdown_item);
         trial_spinner.setAdapter(adapterTrial);
         trial_spinner.setOnItemSelectedListener(this);
