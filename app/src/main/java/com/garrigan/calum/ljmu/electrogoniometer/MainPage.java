@@ -1,6 +1,7 @@
 package com.garrigan.calum.ljmu.electrogoniometer;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,9 +21,13 @@ public class MainPage extends AppCompatActivity {
         setContentView(R.layout.page_main);
         if( data.isEmpty()) {
             Set<String> set = getSharedPreferences("app", MODE_PRIVATE).getStringSet("measurements", null);
-            data.addAll(set);
+
+            if(set != null) {
+                data.addAll(set);
+            }
         }
         setupButtonClicks();
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
     }
 
     private void setupButtonClicks() {
