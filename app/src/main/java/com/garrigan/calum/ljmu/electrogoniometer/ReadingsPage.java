@@ -2,9 +2,11 @@ package com.garrigan.calum.ljmu.electrogoniometer;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -91,6 +93,25 @@ public class ReadingsPage extends AppCompatActivity {
         @Override
         public void onBindViewHolder(@NonNull ExampleViewHolder holder, int position) {
             holder.measureItem.setText(data.get(position));
+            holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    new Handler().post(new Runnable() {
+                        @Override
+                        public void run() {
+                            data.remove(position);
+                            adapter.data = MainPage.data;
+                            Set<String> set = new HashSet<String>();
+                            set.addAll(MainPage.data);
+                            getSharedPreferences("app", MODE_PRIVATE).edit().putStringSet("measurements", set).commit();
+
+                            adapter.notifyDataSetChanged();
+                        }
+                    });
+
+                    return true;
+                }
+            });
         }
 
         @Override
