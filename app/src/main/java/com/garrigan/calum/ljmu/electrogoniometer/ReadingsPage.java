@@ -3,17 +3,21 @@ package com.garrigan.calum.ljmu.electrogoniometer;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -65,6 +69,14 @@ public class ReadingsPage extends AppCompatActivity {
                 }
             });
         }
+
+        new Handler().post(new Runnable() {
+            @Override
+            public void run() {
+                Snackbar toast = Snackbar.make(patientList, "Long press to remove item", Snackbar.LENGTH_LONG);
+                toast.show();
+            }
+        });
     }
 
     public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ExampleViewHolder> {
