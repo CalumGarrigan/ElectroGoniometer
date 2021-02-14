@@ -16,7 +16,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/blinking_text"/>
+        app:layout_constraintBottom_toTopOf="@+id/blinking_text"
+        android:text="0°"/>
     <ImageView
         android:id="@+id/playIcon"
         android:layout_width="120dp"
