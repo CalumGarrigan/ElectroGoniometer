@@ -1,5 +1,6 @@
 package com.garrigan.calum.ljmu.electrogoniometer;
 
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
 import android.util.Pair;
@@ -27,5 +28,8 @@ public class AboutPage extends AppCompatActivity {
 
         text = (TextView) findViewById(R.id.text3);
         text.setMovementMethod(LinkMovementMethod.getInstance() );
+
+        TextView txt = (TextView) findViewById(R.id.reference_title);
+        txt.setPaintFlags(txt.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
     }
 }

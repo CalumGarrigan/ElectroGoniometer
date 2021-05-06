@@ -40,14 +40,15 @@
           android:layout_gravity="center_horizontal"
           android:fontFamily="serif-monospace"
           android:padding="5dp"
-          android:text="This app is designed to measure joint angles of the body."
+          android:text="This mobile application can be used to measure various angles determining the patient’s range of motion (ROM) in any joint."
           android:textColor="@color/white"
           android:textSize="20dp" />
+
       <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
           android:layout_width="match_parent"
           android:layout_height="343dp"
           android:layout_marginTop="5dp"
-          app:src="@drawable/app_design" />
+          app:src="@drawable/app_design2" />
       <TextView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
@@ -68,7 +69,7 @@
           android:layout_width="match_parent"
           android:layout_height="343dp"
           android:layout_marginTop="5dp"
-          app:src="@drawable/electrogoniometer" />
+          app:src="@drawable/electrogoniomer_1" />
       <TextView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
@@ -82,42 +83,69 @@
           android:layout_height="wrap_content"
           android:fontFamily="serif-monospace"
           android:padding="5dp"
-          android:text="This mobile application can be used to measure various angles determining the patient’s range of motion (ROM) in any joint. In this image the electrogoniometer mobile application is placed on top of thigh in line with the femur as well as placed on the tibia. Overall measuring the patient’s popliteal angle (PA), which is the angle between the thigh and the leg.
-"
+          android:text="In this image, the electrogoniometer mobile application is initially placed on top of the thigh in line with the femur using the red line as a marker, the same step is used for the tibia, lining the device in line with the tibia using the red marker. Resulting in measuring the patient’s popliteal angle (PA) by taking the device’s angular position at the thigh and taking the second angular position at the tibia and taking the difference between the two angle positions."
           android:textColor="@color/white"
           android:textSize="20dp" />
+
+
       <View
           android:layout_width="wrap_content"
           android:layout_height="4dp"
           android:background="@color/white" />
+
       <TextView
-          android:layout_width="421dp"
-          android:layout_height="32dp"
-          android:layout_alignParentTop="true"
-          android:layout_centerHorizontal="true"
-          android:fontFamily="serif-monospace"
-          android:padding="2dp"
+          android:id="@+id/reference_title"
+          android:layout_width="161dp"
+          android:layout_height="30dp"
+          android:layout_gravity="center"
+          android:text="Third Party References:" />
+
+      <TextView
           android:id="@+id/text1"
-          android:text="@string/linktosite" />
-      <TextView
-          android:layout_width="388dp"
-          android:layout_height="48dp"
-          android:layout_alignParentTop="true"
-          android:layout_centerHorizontal="true"
-          android:fontFamily="serif-monospace"
-          android:padding="2dp"
-          android:id="@+id/text2"
-          android:text="@string/linktosite2" />
-      <TextView
           android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_gravity="center_horizontal"
+          android:layout_height="22dp"
           android:layout_alignParentTop="true"
           android:layout_centerHorizontal="true"
+          android:layout_gravity="center"
           android:fontFamily="serif-monospace"
           android:padding="2dp"
+          android:text="@string/linktosite" />
+
+
+
+      <TextView
+          android:id="@+id/text2"
+          android:layout_width="wrap_content"
+          android:layout_height="22dp"
+          android:layout_alignParentTop="true"
+          android:layout_centerHorizontal="true"
+          android:layout_gravity="center"
+          android:fontFamily="serif-monospace"
+          android:padding="2dp"
+          android:text="@string/linktosite2" />
+
+
+      <TextView
           android:id="@+id/text3"
+          android:layout_width="277dp"
+          android:layout_height="39dp"
+          android:layout_alignParentTop="true"
+          android:layout_centerHorizontal="true"
+          android:layout_gravity="center"
+          android:fontFamily="serif-monospace"
+          android:padding="2dp"
           android:text="@string/linktosite3" />
+
+      <TextView
+          android:id="@+id/text4"
+          android:layout_width="393dp"
+          android:layout_height="53dp"
+          android:layout_alignParentTop="true"
+          android:layout_centerHorizontal="true"
+          android:layout_gravity="center"
+          android:fontFamily="serif-monospace"
+          android:padding="2dp"
+          android:text="@string/linktosite4" />
     </LinearLayout>
   </ScrollView>
 </LinearLayout>

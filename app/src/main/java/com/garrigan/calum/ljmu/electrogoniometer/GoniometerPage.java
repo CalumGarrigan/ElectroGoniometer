@@ -39,12 +39,13 @@ public class GoniometerPage extends AppCompatActivity implements SensorEventList
 
         angle = findViewById(R.id.angle);
 
+
         TextView btnSave = findViewById(R.id.save_data_button);
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                String measurement = patientId + " " + trialId + ": " + joint + " Joint : Angle: " + measuredAngle;
+                String measurement = patientId + " " + trialId + ": " + joint + " Joint  Angle: " + measuredAngle;
                 MainPage.data.add(measurement);
                 Set<String> set = new HashSet<String>();
                 set.addAll(MainPage.data);
@@ -102,15 +103,33 @@ public class GoniometerPage extends AppCompatActivity implements SensorEventList
             measuredAngle = Math.abs((endAngle.intValue() - startAngle.intValue())) + "°";
             angleLabel.setText(measuredAngle);
         }
+
+        TextView zAngleLabel = findViewById(R.id.z_angle);
+        if(zAngleLabel != null){
+            zAngleLabel.setText(("When z value is zero, start measurement" + " " + "="+ " " + getZAngle(event).intValue()  + "°"));
+        }
+
     }
 
     /*
-    * This method converts x/y acceleration values into x/y coordinates then an angle in degrees.
-     */
+    * Angle between two points: atan2(y2-y1,x2-x1)(180/PI)
+    * Radians to Degrees: 180/PI
+    */
     private double getAngle(SensorEvent event) {
-        float xAcceleration = currentPos.values[0];
+        float xvalue= currentPos.values[0];
+        float yvalue = currentPos.values[1];
+        return Math.atan2(xvalue, yvalue) / (Math.PI / 180);
+    }
+
+    /*
+     * Angle between two points: atan2(y2-y1,x2-x1)(180/PI)
+     * Radians to Degrees: 180/PI
+     */
+    private Double getZAngle(SensorEvent event) {
         float yAcceleration = currentPos.values[1];
-        return Math.atan2(xAcceleration, yAcceleration) / (Math.PI / 180);
+        float zAcceleration = currentPos.values[2];
+        return Math.atan2(yAcceleration, zAcceleration) / (Math.PI / 180) + (90);
+
     }
 
     @Override
